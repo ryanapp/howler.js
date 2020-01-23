@@ -1,5 +1,5 @@
 /*!
- *  howler.js v2.1.3
+ *  howler.js v2.1.4
  *  howlerjs.com
  *
  *  (c) 2013-2019, James Simpson of GoldFire Studios
@@ -1686,6 +1686,17 @@
       return duration;
     },
 
+    gainNode: function(id) {
+      var self = this;
+
+      if (args.length === 0) {
+        // We will simply return the current position of the first node.
+        id = self._sounds[0]._id;
+      }
+
+      return self._soundById(id)._node;
+    },
+
     /**
      * Returns the current loaded state of this Howl.
      * @return {String} 'unloaded', 'loading', 'loaded'
@@ -2500,7 +2511,7 @@
 /*!
  *  Spatial Plugin - Adds support for stereo and 3D audio where Web Audio is supported.
  *  
- *  howler.js v2.1.3
+ *  howler.js v2.1.4
  *  howlerjs.com
  *
  *  (c) 2013-2019, James Simpson of GoldFire Studios
