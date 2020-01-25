@@ -1689,7 +1689,7 @@
     gainNode: function(id) {
       var self = this;
 
-      if (args.length === 0) {
+      if (arguments.length === 0) {
         // We will simply return the current position of the first node.
         id = self._sounds[0]._id;
       }
